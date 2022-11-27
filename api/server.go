@@ -9,6 +9,7 @@ import (
 
 type Server struct {
 	router       *gin.Engine
+	memePictures MemePictures
 	bot          *linebot.Client
 	MessageLogDB db.IMessage
 }
@@ -16,6 +17,7 @@ type Server struct {
 func NewServer(mp MemePictures, bot *linebot.Client, messageLogDB db.IMessage) *Server {
 
 	server := &Server{
+		memePictures: mp,
 		bot:          bot,
 		MessageLogDB: messageLogDB,
 	}

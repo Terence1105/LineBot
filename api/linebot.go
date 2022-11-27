@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"time"
 
+	"github.com/Terence1105/LineBot/util"
+
 	"github.com/gin-gonic/gin"
 	"github.com/line/line-bot-sdk-go/linebot"
 	"github.com/spf13/viper"
@@ -50,6 +52,16 @@ func (s *Server) CallbackHandler(c *gin.Context) {
 				s.MessageLogDB.InsertMessageLog(ctx, event.Source.UserID, "Sticker type data")
 			default:
 				s.MessageLogDB.InsertMessageLog(ctx, event.Source.UserID, "unknown type message")
+			}
+
+			randomNum := util.Get_Random_Int(0, 100)
+			random_Meme := s.memePictures.Data.Memes[randomNum].Url
+			originalContentUrl := random_Meme
+			previewImageUrl := random_Meme
+
+			if _, err = s.bot.ReplyMessage(event.ReplyToken, linebot.NewImageMessage(originalContentUrl, previewImageUrl)).Do(); err != nil {
+				c.JSON(http.StatusInternalServerError, errorResponse(err))
+				return
 			}
 		}
 	}

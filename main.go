@@ -9,11 +9,13 @@ import (
 )
 
 func main() {
+	memePictures := api.New_MemesPicture()
+
 	lineBot := api.NewLineBot()
 
 	messageLogDB := db.NewDB()
 
-	server := api.NewServer(lineBot, messageLogDB)
+	server := api.NewServer(memePictures, lineBot, messageLogDB)
 
 	server.Start(":" + viper.GetString("port"))
 }
