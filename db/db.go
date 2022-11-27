@@ -12,6 +12,8 @@ import (
 
 type IMessage interface {
 	InsertMessageLog(context.Context, string, string)
+	GetMessageLogByUserId(context.Context, string) []MessageLog
+	GetAllMessageLog(context.Context) []MessageLog
 }
 
 type MongoDB struct {

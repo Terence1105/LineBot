@@ -38,7 +38,7 @@ func New_MemesPicture() MemePictures {
 		panic(fmt.Errorf("fatal error ReadAll: %w", err))
 	}
 	defer res.Body.Close()
-	
+
 	er := json.Unmarshal(sitemap, &memePictures)
 	if er != nil {
 		panic(fmt.Errorf("fatal error Unmarshal: %w", err))
