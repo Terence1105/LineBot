@@ -1,0 +1,15 @@
+linebot:
+  token: "eqcifcUAKs2Fwz9Yk+7k9jb9OTmkHvNHb1q7xG2drE7J2PPLcfp3JOoojiDv164IqWGLkXTUaTIjgLm6CAsDw7abhVV8/ItFf6Fg5r+jg1/NGzhJrM0cDFRxoBbslfLL7CJhHhZtQ9kAw3OMFhqYZwdB04t89/1O/w1cDnyilFU="
+  secret: "7863b8f9def36adbc6e29b4f8ee789a5"
+
+port: "8080"
+
+mongo:
+  URI: "mongodb://localhost:27017"
+  DataBase: "LineBot"
+  MessageCollection: "MessageLog"
+  Credential:
+    AuthMechanism: "SCRAM-SHA-256"
+    AuthSource: "LineBot"
+    Username: "sa"
+    Password: "pass.123"
