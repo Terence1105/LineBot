@@ -66,3 +66,11 @@ func (s *Server) CallbackHandler(c *gin.Context) {
 		}
 	}
 }
+
+func (s *Server) PushMessage(c *gin.Context) {
+	_, err := s.bot.PushMessage(viper.GetString("linebot.userId"), linebot.NewTextMessage("A meme a day keeps the doctor away")).Do()
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, errorResponse(err))
+		return
+	}
+}

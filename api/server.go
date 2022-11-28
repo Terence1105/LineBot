@@ -28,6 +28,7 @@ func NewServer(mp MemePictures, bot *linebot.Client, messageLogDB db.IMessage) *
 func (s *Server) setUpRouter() {
 	router := gin.Default()
 	router.POST("/callback", s.CallbackHandler)
+	router.POST("/push", s.PushMessage)
 	s.router = router
 }
 
