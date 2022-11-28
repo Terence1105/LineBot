@@ -37,7 +37,7 @@ make initLineBot
 ```
 make cli
 GetAllMessageLogCmd
-GetMessageLogByUserIdCmd -u user_it
+GetMessageLogByUserIdCmd -u user_id
 ```
 
 ## Usage
