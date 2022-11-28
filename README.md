@@ -1,7 +1,7 @@
 # LineBot with meme
 
 ## About The Project
-There is a meme line bot which you can get random mem image！
+There is a meme line bot which you can get random meme image！
 
 ## Built With
 + HTTP framework: https://github.com/gin-gonic/gin
